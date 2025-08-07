@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000000;
+}
+.container-forms {
+  height: 400px;
+  background-color: #000000;
+
+  width: 400px;
+  margin: auto;
+  border-radius: 200px;
+  position: relative;
+  top: 90px;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 200px auto;
+  position: relative;
+  bottom: 100px;
+  gap: 10px;
+}
+
+input {
+  border: solid 1px #ffffff;
+  width: 225px;
+  margin: auto;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+button {
+  font-size: 16px;
+  color: white;
+  font-size: 22;
+  border: none;
+  width: 240px;
+  margin: auto;
+  height: 35px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #ff4e66, #ffc400ad);
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  position: relative;
+  left: 140px;
+  top: 90px;
+}
+#Forget-Password {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 300px;
+  left: 90px;
+}
+
+#Signup {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 300px;
+  left: 270px;
+}
+
+a {
+  color: white;
+  list-style: none;
+}
+
+
+.svg-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px #d43707cc);
+  z-index: 1;
+  animation: rotate 12s linear infinite;
+}
+
+.svg-path {
+  stroke: url(#gradient);
+  stroke-width: 5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 1067;
+  stroke-dashoffset: 1067;
+  animation: dash 4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1067;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1067;
+  }
+}
+
+.container-forms {
+  overflow: visible;
+  position: relative;
+}
