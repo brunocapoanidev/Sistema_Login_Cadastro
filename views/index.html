@@ -1,70 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sistema de Login</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container-forms">
-      <p>Cadastro</p>
 
-      <div class="forms">
-        <input
-          type="text"
-          id="nome"
-          name="user"
-          placeholder="Digite seu nome"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistema de Login</title>
+  <link rel="stylesheet" href="/style.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
 
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-          placeholder="Digite sua senha"
-        />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+</head>
 
-          <input
-          type="email"
-          id="Email"
-          name="email"
-          placeholder="Digite seu email"
-        />
+<body>
 
-        <button id="btn_envio">Sign up</button>
-      </div>
 
-      <nav>
-        <p id="Forget-Password"><a href="#fg">Forget Password</a></p>
-        <p id="Signup"><a href="/Login">Signup</a></p>
-      </nav>
 
-      <svg
-        class="svg-circle"
-        viewBox="0 0 360 360"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle class="svg-path" cx="180" cy="180" r="170" />
-        <defs>
-          <linearGradient
-            id="gradient"
-            x1="0"
-            y1="0"
-            x2="360"
-            y2="360"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stop-color="#FF4E66" />
-            <stop offset="100%" stop-color="#FFC400" />
-          </linearGradient>
-        </defs>
-      </svg>
+  <div class="container-left">
+    <div class="elements">
+      <h1>Hello, Welcome!</h1>
+      <p>Dont have on account?</p>
+      <button id="Btn-register"> Register</button>
+    </div>
+  </div>
+
+  <div class="container-forms">
+    <p>Login</p>
+
+    <div class="forms">
+      <input type="text" id="nome" name="user" placeholder="Digite seu nome" />
+
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" />
+
+      <p id="forget-password">Forgot Password?</p>
+
+      <button id="btn_envio">Login</button>
+
+      <p id="plataforms">or login with social plataforms</p>
+
+  
     </div>
 
-    <script src="../app.js"></script>
-  </body>
+    <div id="redes-sociais">
+  <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+
+
+  <script src="../Login.js"></script>
+</body>
+
 </html>
