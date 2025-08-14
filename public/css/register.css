@@ -6,6 +6,7 @@
   --primary-gradient: linear-gradient(to right, #ff4e66, #ffc400ad);
 }
 
+/* ======== BODY ======== */
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--white);
@@ -14,31 +15,39 @@ body {
   display: flex;
   height: 100vh;
   overflow: hidden;
+  transition: transform 1s ease;
+  flex-direction: row-reverse;
 }
 
-.container-left {
+body.slide-out {
+  transform: translateX(-100%);
+}
+
+/* ======== CONTAINERS ======== */
+.lado-esquerdo {
   flex: 1;
-  background-color: #10B981;
-  border-radius: 0 175px 175px 0;
+  background-image: linear-gradient(140deg, #10B981, #10b981a9);
+  border-radius: 175px 0 0 175px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
 }
 
-.container-forms {
+.lado-direito {
   flex: 1;
   background-color: white;
-  
   padding: 60px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  margin-bottom: 4rem;
 }
 
-.elements {
+/* ======== ELEMENTS ======== */
+.conteudo-esquerdo {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -46,7 +55,7 @@ body {
   margin-top: -5rem;
 }
 
-.elements h1 {
+.conteudo-esquerdo h1 {
   color: white;
   font-size: 3rem;
   font-weight: 800;
@@ -54,7 +63,7 @@ body {
   margin: 0;
 }
 
-.elements p {
+.conteudo-esquerdo p {
   color: white;
   font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -62,7 +71,8 @@ body {
   margin: 0;
 }
 
-#Btn-register {
+/* ======== BUTTONS ======== */
+#btn-login {
   width: 16rem;
   border: 1px solid white;
   color: white;
@@ -73,14 +83,14 @@ body {
   border-radius: 8px;
   padding: 0.6rem 0;
   transition: background-color 0.3s ease;
-  margin-left: 5rem;
+  margin-left: 8rem;
 }
 
-#Btn-register:hover {
+#btn-login:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.forms {
+.formulario {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -88,12 +98,34 @@ body {
   box-sizing: border-box;
 }
 
+.formulario button {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--white);
+  border: none;
+  height: 4rem;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #10B981;
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 3rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======== INPUTS ======== */
 input {
   border: 1px solid var(--white);
   height: 4rem;
   border-radius: 15px;
   background-color: #d7cfcf;
-  color: rgb(144, 144, 144);
+  color: rgb(2, 2, 2);
   width: 100%;
   font-size: 1.2rem;
   padding: 0 10px;
@@ -115,48 +147,42 @@ input[type="text"] {
   background-position: right 10px center;
 }
 
-.forms button {
-  font-weight: bold;
-  font-size: 2rem;
-  color: var(--white);
-  border: none;
-  height: 4rem;
-  border-radius: 15px;
-  cursor: pointer;
-  background-color: #10B981;
-  transition: transform 0.3s ease, box-shadow 0.2s ease;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  bottom: 3rem;
+input[type="email"] {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M2 4h20v16H2V4zm18 2l-8 5-8-5V6l8 5 8-5v.01z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right 10px center;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* ======== TEXT ======== */
 p {
   color: var(--bg-dark);
   font-size: 2.5rem;
   text-align: center;
   font-weight: 700;
-  margin-bottom: 3rem;
-  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
-#forget-password{
- color: black;
- font-size: 1rem;
+#esqueci-senha {
+  color: black;
+  font-size: 1rem;
+  transition: 0.3s;
+  margin-top: -1rem;
 }
 
-#plataforms{
+#esqueci-senha:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#texto-redes {
   font-size: 1rem;
   position: static;
   margin-top: -3rem;
 }
 
-#redes-sociais {
+/* ======== REDES SOCIAIS ======== */
+#icones-redes {
   display: flex;
   gap: 3rem;
   padding: 0.5rem;
@@ -164,7 +190,7 @@ p {
   margin-top: -2rem;
 }
 
-#redes-sociais a {
+#icones-redes a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,50 +198,59 @@ p {
   height: 3rem;
   background-color: #222;
   border-radius: 6px;
-color: black;
-border: solid black 1px;
-  
+  color: black;
+  border: solid black 1px;
+  transition: 0.3s;
   font-size: 1rem;
-
 }
 
-#redes-sociais a:hover {
+#icones-redes a:hover {
   background-color: #555;
+  transform: scale(1.05);
 }
 
-#redes-sociais a:nth-child(1) { background-color:white; } /* Google */
-#redes-sociais a:nth-child(2) { background-color: white } /* Facebook */
-#redes-sociais a:nth-child(3) { background-color: white } /* Twitter */
-#redes-sociais a:nth-child(4) { background-color: white} /* Instagram */
+#icones-redes a:nth-child(1) {
+  background-color: white;
+} /* Google */
+#icones-redes a:nth-child(2) {
+  background-color: white;
+} /* Facebook */
+#icones-redes a:nth-child(3) {
+  background-color: white;
+} /* Twitter */
+#icones-redes a:nth-child(4) {
+  background-color: white;
+} /* Instagram */
 
-
+/* ======== LINKS ======== */
 a {
   color: var(--white);
   text-decoration: none;
 }
 
-/* --- Responsividade --- */
+/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
     height: auto;
   }
 
-  .container-left {
+  .lado-esquerdo {
     width: 100%;
     height: 200px;
     border-radius: 0 0 50px 50px;
     padding: 1rem 2rem;
   }
 
-  .container-forms {
+  .lado-direito {
     width: 100%;
     margin-top: 20px;
     border-radius: 30px;
     padding: 40px 20px;
   }
 
-  button, input {
+  button,
+  input {
     width: 100%;
   }
 }

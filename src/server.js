@@ -2,27 +2,17 @@ const express = require("express");
 const path = require("path");
 const fs = require('fs');
 const app = express();
-const port = 14000;
+const port = 5000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
-});
-
-app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'Home.html'));
-});
-
-
+const users = []
 
 function PessoasCadastradas(nome, senha, email) {
-  const dados = { nome, senha  };
+  const dados = { nome, senha, email };
   const linha = JSON.stringify(dados) + '\n';
-
-  const caminhoArquivo = path.join(__dirname, 'PessoasCadastrados.txt');
+  const caminhoArquivo = path.join(__dirname, 'PessoasCadastradas.txt');
 
   fs.appendFile(caminhoArquivo, linha, (err) => {
     if (err) {
@@ -33,24 +23,47 @@ function PessoasCadastradas(nome, senha, email) {
   });
 }
 
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+});
+
+app.get('/Cadastro', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'Register.html'));
+});
+
+app.post("/login", (req, res) => {
+  const { user , senha } = req.body
+
+  if (!users.some(u => u.nome === user && u.senha === senha)) {
+  return res.send("Este Usuário não existe!");
+}
+
+  res.send("Seja bem vindo " + user)
+  console.log(users)
+})
+
 app.post("/Cadastro", (req, res) => {
-  const { user, senha} = req.body;
+  const { user, senha , email} = req.body;
 
   if (!user || typeof user !== "string" || !user.trim()) {
   
-
-  console.log("Oi amor")
-    return res.status(400).send("Erro: nome inválido");
+    return res.send( 'user invalido' );
 }
 
 if (!senha || typeof senha !== "string" || !senha.trim()) {
-    return res.status(400).send("Erro: senha inválida");
+    return res.send('senha invalido');
 }
 
-  PessoasCadastradas(user, senha );
+if (!email|| typeof email !== "string" || !email.trim()) {
+    return res.send('email invalido');
+}
+
+  users.push({nome: user , senha: senha})
+  PessoasCadastradas(user, senha, email );
   res.send(`Parabéns, ${user}! Seu cadastro foi realizado com sucesso. Seja muito bem-vindo!`);
 });
 
 app.listen(port, () => {
-  console.log(`Servidorrrrrr rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
