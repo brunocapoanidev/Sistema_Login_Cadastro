@@ -1,9 +1,1 @@
-{"nome":"4534543543","senha":"fff","email":"brunocapoani14@gmail.com"}
 {"nome":"bruno","senha":"123","email":"brunocapoani14@gmail.com"}
-{"nome":"bruno","senha":"12345","email":"brunocapoani14@gmail.com"}
-{"nome":"bruno","senha":"12345","email":"brunocapoani14@gmail.com"}
-{"nome":"bruno","senha":"12345","email":"brunocapoani14@gmail.com"}
-{"nome":"lucas","senha":"olaa","email":"dsad"}
-{"nome":"lucas","senha":"olaa","email":"dsdsd"}
-{"nome":"lucas","senha":"2222","email":"dsdsd"}
-{"nome":"bolacha","senha":"2222","email":"brunocap"}
