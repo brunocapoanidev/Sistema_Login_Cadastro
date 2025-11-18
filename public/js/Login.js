@@ -29,8 +29,7 @@ localStorage.setItem("NomeUser" , user)
   const texto = await resposta.text();
   alert(texto)
 
-  inputNome.value = "";
-  inputSenha.value = "";
+
 
      
   

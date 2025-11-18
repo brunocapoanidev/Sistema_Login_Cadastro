@@ -36,7 +36,7 @@ app.post("/login", (req, res) => {
   const { user , senha } = req.body
 
   if (!users.some(u => u.nome === user && u.senha === senha)) {
-  return res.send("Este Usuário não existe!");
+  return res.status('404').send("Este Usuário não existe!");
 }
 
   res.send("Seja bem vindo " + user)

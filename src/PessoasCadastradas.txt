@@ -1,1 +1,2 @@
 {"nome":"bruno","senha":"123","email":"brunocapoani14@gmail.com"}
+{"nome":"bruno moraes","senha":"brunocap12","email":"brunocapoani14@gmail.com"}
