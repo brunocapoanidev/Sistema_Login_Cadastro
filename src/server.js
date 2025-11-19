@@ -63,7 +63,7 @@ if (!email|| typeof email !== "string" || !email.trim()) {
   PessoasCadastradas(user, senha, email );
   res.send(`Parabéns, ${user}! Seu cadastro foi realizado com sucesso. Seja muito bem-vindo!`);
 });
-
+console.log('sfdsadasdsad')
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
