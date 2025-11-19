@@ -18,9 +18,6 @@ function validaCampos(){
   return true;
 }
 
-
-
-
 btnEnviar.addEventListener("click", async () => {
   const user = inputNome.value.trim();
   const senha = inputSenha.value.trim();
@@ -30,7 +27,7 @@ if(!validaCampos()){
   return;
 }
 
-  
+
 localStorage.setItem("NomeUser" , user)
   const resposta = await fetch("/Login", {
     method: "POST",
@@ -42,13 +39,10 @@ localStorage.setItem("NomeUser" , user)
   alert(texto)
 });
 
-
-
-
 btnRegister.addEventListener("click", function (e) {
   e.preventDefault(); 
   
-  console.log("brunoooooooooooooooo")
+ 
   document.body.classList.add("slide-out"); 
   
   setTimeout(() => {
