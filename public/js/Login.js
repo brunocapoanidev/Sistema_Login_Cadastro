@@ -49,3 +49,6 @@ btnRegister.addEventListener("click", function (e) {
     window.location.href = "/Cadastro"; 
   }, 1000); 
 });
+
+
+console.log("ola mundo, meu nome é Bruno");
