@@ -48,7 +48,7 @@ localStorage.setItem("NomeUser" , user)
 btnRegister.addEventListener("click", function (e) {
   e.preventDefault(); 
   
-  console.log("testw")
+  console.log("brunoooooooooooooooo")
   document.body.classList.add("slide-out"); 
   
   setTimeout(() => {
